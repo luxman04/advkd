@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #b8902a;
+  --gold-light: #e8d5a0;
+  --gold-pale: #faf5e8;
+  --navy: #0d1b2a;
+  --navy-mid: #1c2e45;
+  --cream: #f9f6ef;
+  --text-muted: #5a5a5a;
+  --border: rgba(184, 144, 42, 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: #1a1a1a;
+}
+
+@layer components {
+  .section-label {
+    @apply block text-[0.72rem] tracking-[2.5px] uppercase text-gold font-medium mb-3;
+  }
+  .section-title {
+    @apply font-serif text-navy leading-tight;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+  }
+  .btn-primary {
+    @apply inline-block bg-gold text-navy px-8 py-3 rounded-sm text-sm font-medium tracking-wide transition-transform hover:-translate-y-px hover:bg-[#D4A83A];
+  }
+  .btn-outline {
+    @apply inline-block bg-transparent text-gold-light border border-gold/45 px-8 py-3 rounded-sm text-sm transition-colors hover:border-gold hover:text-gold;
+  }
+  .btn-outline-dark {
+    @apply inline-block bg-transparent text-navy border border-navy/30 px-7 py-2.5 rounded-sm text-sm transition-colors hover:border-gold hover:text-gold;
+  }
+  .btn-navy {
+    @apply inline-block bg-navy text-gold px-8 py-3 rounded-sm text-sm font-medium transition-colors hover:bg-[#162840] whitespace-nowrap;
+  }
+  .form-label {
+    @apply block text-[0.75rem] font-medium tracking-wide text-muted uppercase mb-1.5;
+  }
+  .form-input {
+    @apply w-full px-3.5 py-2.5 border border-black/15 rounded-sm bg-cream text-[0.9rem] outline-none transition-colors focus:border-gold;
+  }
+  .card {
+    @apply bg-white border border-black/[0.07] rounded-md p-8 shadow-[0_4px_24px_rgba(0,0,0,0.08)];
+  }
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-diagonal {
+  background-image: repeating-linear-gradient(
+      90deg,
+      rgba(184, 144, 42, 0.04) 0px,
+      rgba(184, 144, 42, 0.04) 1px,
+      transparent 1px,
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(184, 144, 42, 0.04) 0px,
+      rgba(184, 144, 42, 0.04) 1px,
+      transparent 1px,
+      transparent 80px
+    );
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker-inner {
+  animation: ticker 30s linear infinite;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
