@@ -55,12 +55,21 @@ export default function ContactForm() {
         }),
       });
 
-      if (!res.ok) throw new Error('Request failed');
+      const resData = await res.json().catch(() => null);
+
+      if (!res.ok) {
+        throw new Error(resData?.error || 'Could not send your message. Please try again.');
+      }
+
       setStatus('success');
       form.reset();
-    } catch {
+    } catch (err: unknown) {
       setStatus('error');
-      setErrorMsg('Something went wrong sending your message. Please call or WhatsApp us directly instead.');
+      setErrorMsg(
+        err instanceof Error && err.message
+          ? err.message
+          : 'Something went wrong sending your message. Please call or WhatsApp us directly instead.'
+      );
     }
   }
 

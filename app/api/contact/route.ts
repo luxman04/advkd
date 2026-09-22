@@ -75,7 +75,10 @@ export async function POST(req: NextRequest) {
 
     if (error) {
       console.error('Resend error:', error);
-      return NextResponse.json({ error: 'Could not send your message. Please try again.' }, { status: 502 });
+      return NextResponse.json(
+        { error: error.message || 'Could not send your message. Please try again.' },
+        { status: 502 }
+      );
     }
 
     return NextResponse.json({ ok: true });
