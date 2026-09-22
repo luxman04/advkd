@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     'Advocate KaranDeep — legal representation across Chandigarh Tricity and Delhi NCR...',
   keywords: siteConfig.keywords,
-  alternates: { canonical: '/' },
+  alternates: { canonical: 'https://advkd.com/' },
 };
 
 const practiceAreas = [
