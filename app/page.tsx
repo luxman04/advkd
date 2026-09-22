@@ -51,7 +51,7 @@ export default async function HomePage() {
             Delhi NCR, Punjab &amp; Haryana.
           </p>
           <div className="flex gap-4 flex-wrap items-center">
-            <Link href="/contact" className="btn-primary">Book Consultation</Link>
+            <Link href="#book" className="btn-primary">Book Consultation</Link>
             <Link href="/practice-areas" className="btn-outline">View Practice Areas</Link>
           </div>
           <div className="flex gap-10 mt-14 pt-8 border-t border-white/[0.08]">
@@ -233,11 +233,11 @@ export default async function HomePage() {
           </h2>
           <p className="text-navy/70 text-[0.9rem] mt-1">Call, WhatsApp, or send a message — we respond within 24 hours.</p>
         </div>
-        <Link href="/contact" className="btn-navy">Book Consultation</Link>
+        <Link href="#book" className="btn-navy">Book Consultation</Link>
       </div>
 
       {/* CONTACT SNAPSHOT */}
-      <section className="bg-white grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-16 items-start px-[8%] py-[90px]">
+      <section id="book" className="bg-white grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-16 items-start px-[8%] py-[90px] scroll-mt-20">
         <FadeUp>
           <span className="section-label">Get in Touch</span>
           <h2 className="section-title">Book a Consultation</h2>

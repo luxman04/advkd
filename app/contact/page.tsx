@@ -93,7 +93,7 @@ export default function ContactPage() {
       </div>
 
       {/* Contact Information + Form */}
-      <div className="bg-white grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-16 px-[8%] py-20 items-start">
+      <div id="book" className="bg-white grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-16 px-[8%] py-20 items-start scroll-mt-20">
         {/* Left Column */}
         <div>
           <span className="section-label">Contact Information</span>
