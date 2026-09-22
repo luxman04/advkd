@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { siteConfig } from '@/lib/site-config';
 
 const MATTER_OPTIONS = [
   'Criminal Litigation / Bail',
@@ -22,15 +23,19 @@ type Status = 'idle' | 'submitting' | 'success' | 'error';
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  const [lastMailto, setLastMailto] = useState('');
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
 
     const name = String(data.get('name') || '').trim();
     const phone = String(data.get('phone') || '').trim();
-    const matter = String(data.get('matter') || '');
+    const email = String(data.get('email') || '').trim();
+    const city = String(data.get('city') || '').trim();
+    const matter = String(data.get('matter') || '').trim();
+    const mode = String(data.get('mode') || '').trim();
     const message = String(data.get('message') || '').trim();
 
     if (!name || !phone || !matter || !message) {
@@ -40,37 +45,28 @@ export default function ContactForm() {
     }
 
     setStatus('submitting');
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name,
-          phone,
-          email: data.get('email'),
-          city: data.get('city'),
-          matter,
-          mode: data.get('mode'),
-          message,
-        }),
-      });
 
-      const resData = await res.json().catch(() => null);
+    const subject = `Legal Consultation Booking — ${matter} (${name})`;
+    const body = `Full Name: ${name}
+Phone / WhatsApp: ${phone}
+Email: ${email || 'Not provided'}
+City / Location: ${city || 'Not provided'}
+Type of Legal Matter: ${matter}
+Preferred Consultation Mode: ${mode || 'In-Person (Chandigarh)'}
 
-      if (!res.ok) {
-        throw new Error(resData?.error || 'Could not send your message. Please try again.');
-      }
+Brief Description / Query:
+${message}
 
-      setStatus('success');
-      form.reset();
-    } catch (err: unknown) {
-      setStatus('error');
-      setErrorMsg(
-        err instanceof Error && err.message
-          ? err.message
-          : 'Something went wrong sending your message. Please call or WhatsApp us directly instead.'
-      );
-    }
+---
+Sent via ${siteConfig.name} Website`;
+
+    const mailtoUrl = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setLastMailto(mailtoUrl);
+
+    // Redirect user to their email client with pre-filled consultation details
+    window.location.href = mailtoUrl;
+
+    setStatus('success');
   }
 
   return (
@@ -127,13 +123,36 @@ export default function ContactForm() {
         <p className="text-[0.8rem] text-red-600 bg-red-50 border border-red-200 rounded-sm px-3 py-2">{errorMsg}</p>
       )}
       {status === 'success' && (
-        <p className="text-[0.8rem] text-green-700 bg-green-50 border border-green-200 rounded-sm px-3 py-2">
-          Thank you! Your enquiry has been sent — we will contact you within 24 hours.
-        </p>
+        <div className="text-[0.85rem] text-green-800 bg-green-50 border border-green-200 rounded-sm p-4 space-y-2">
+          <p className="font-medium">Redirecting to your email app with your enquiry details pre-filled...</p>
+          <p className="text-[0.8rem] text-green-700">
+            If your email app did not open automatically,{' '}
+            <a
+              href={lastMailto || `mailto:${siteConfig.email}`}
+              className="underline font-medium text-navy hover:text-gold"
+            >
+              click here to send email to {siteConfig.email}
+            </a>
+            , or reach us directly on{' '}
+            <a
+              href={`${siteConfig.whatsapp}?text=${encodeURIComponent('Hello Adv. KD, I would like to book a legal consultation.')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline font-medium text-green-800 hover:text-green-950"
+            >
+              WhatsApp
+            </a>
+            .
+          </p>
+        </div>
       )}
 
-      <button type="submit" disabled={status === 'submitting'} className="submit-btn w-full py-3.5 text-[0.9rem] bg-gold text-navy rounded-sm font-medium hover:bg-[#D4A83A] transition-colors disabled:opacity-60">
-        {status === 'submitting' ? 'Sending…' : 'Submit Enquiry'}
+      <button
+        type="submit"
+        disabled={status === 'submitting'}
+        className="submit-btn w-full py-3.5 text-[0.9rem] bg-gold text-navy rounded-sm font-medium hover:bg-[#D4A83A] transition-colors disabled:opacity-60"
+      >
+        {status === 'submitting' ? 'Opening Email…' : 'Book Consultation & Send Email →'}
       </button>
       <p className="text-[0.72rem] text-gray-400 text-center">
         All information is kept strictly confidential. Submitting this form does not create an advocate-client
