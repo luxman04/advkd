@@ -7,9 +7,9 @@ import { siteConfig } from '@/lib/site-config';
 import { getAllPosts } from '@/lib/blog-data';
 
 export const metadata: Metadata = {
-  title: 'Adv. KD & Associates | Advocate in Delhi & Chandigarh | High Court Lawyer',
+  title: 'Adv. KD & Associates | High Court Lawyer in Delhi NCR and Chandigarh ,
   description:
-    'Advocate KaranDeep — legal representation across Chandigarh Tricity and Delhi NCR...',
+    'Adv. KD & Associates provides legal consultation and representation criminal, civil, property, NRI and High Court matters Chandigarh, Delhi NCR....',
   keywords: siteConfig.keywords,
   alternates: { canonical: 'https://advkd.com/' },
 };
