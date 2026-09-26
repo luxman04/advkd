@@ -119,7 +119,7 @@ export default function ContactPage() {
               </h4>
 
               <p className="text-[0.85rem] text-muted font-light">
-                Office-1023, Sector 21-B, Chandigarh – 160022
+                Bar room no. 19, P&H high court, chandigarh 160001
               </p>
             </div>
 
