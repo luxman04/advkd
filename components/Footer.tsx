@@ -36,7 +36,11 @@ export default function Footer() {
           <h5 className="font-serif text-gold-light text-[0.85rem] mb-4">Contact</h5>
           <p className="text-[#5A6A7A] text-[0.8rem] mb-1">{siteConfig.phoneDisplay}</p>
           <p className="text-[#5A6A7A] text-[0.8rem] mb-1">{siteConfig.email}</p>
-          <p className="text-[#5A6A7A] text-[0.8rem]">{siteConfig.address.office}</p>
+          <p className="text-[#5A6A7A] text-[0.8rem] leading-relaxed">
+            Bar room no. 19, P&amp;H high court,
+            <br />
+            chandigarh 160001
+          </p>
         </div>
       </div>
       <div className="border-t border-white/5 px-[8%] py-5 flex flex-col md:flex-row justify-between items-center gap-2">

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: [
     'Contact Advocate Chandigarh',
     'Contact Lawyer Delhi',
-    'Law Office Chandigarh Sector 21',
+    'Law Chambers High Court Chandigarh',
     'Advocate Office Delhi',
     'Legal Consultation Chandigarh Delhi',
     'Advocate Phone Number Chandigarh Delhi',
