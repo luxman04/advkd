@@ -9,9 +9,10 @@ import WhatsAppButton from './WhatsAppButton';
 export default function SiteShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isStudio = pathname?.startsWith('/studio');
+  const isAdmin = pathname?.startsWith('/admin');
 
-  if (isStudio) {
-    // The Sanity Studio renders its own full-screen UI — no marketing nav/footer here.
+  if (isStudio || isAdmin) {
+    // Studio and Admin portal render their own dedicated UI — no marketing nav/footer here.
     return <>{children}</>;
   }
 

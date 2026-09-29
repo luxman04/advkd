@@ -5,7 +5,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: 'Contact Adv. KD | Legal Chambers in Chandigarh & Delhi',
   description:
-    'Book a legal consultation with Adv. KaranDeep. Offices in Chandigarh Sector 21-B and South Extension, New Delhi. Reach us via phone, WhatsApp, or email.',
+    'Book a legal consultation with Adv. KaranDeep. Chambers at Punjab & Haryana High Court Chandigarh and South Extension, New Delhi. Reach us via phone, WhatsApp, or email.',
   keywords: [
     'Contact Advocate Chandigarh',
     'Contact Lawyer Delhi',

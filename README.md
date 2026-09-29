@@ -23,15 +23,12 @@ Dependabot) will open a pull request for you automatically whenever Next.js publ
 
 - **Contact form now actually sends email.** It posts to `/api/contact`, which sends via [Resend](https://resend.com)
   (3,000 emails/month free). The old version just showed a fake "Thank you" message and discarded the data.
-- **The admin login/dashboard is gone.** It used a hardcoded password (`admin` / `kd@admin2026`) checked against
-  `localStorage`, which is not real security — anyone could read or bypass it from the browser console. **Blog
-  publishing now runs on [Sanity](https://sanity.io)** — a real, free CMS with proper login, embedded right into this
-  site at `/studio`. The advocate can write and publish a post from a phone browser, no code or redeploy needed. See
-  "Setting up the blog (Sanity)" below.
+- **Hidden Admin Publishing Portal (`/admin`).** A protected, hidden publishing portal for the advocate to write and publish articles directly to the website and Google search index. It uses secure server-side session authentication with the advocate's credentials (`kdadvocate85`).
+- **Sanity CMS integration.** Articles are synced directly with Sanity cloud CMS (`/studio` is also available). Publishing updates the live site instantly without rebuilding.
 - **Real SEO metadata per page**, `sitemap.xml` and `robots.txt` generated automatically, a generated favicon and
   Open Graph share image, and JSON-LD structured data (`Attorney` on every page, `Article` on each blog post).
 - **Privacy Policy rewritten** to accurately describe the real data flow (Resend for the contact form, Sanity for
-  the blog, no admin panel, no analytics) instead of a generic policy that didn't match what the site actually does.
+  the blog) instead of a generic policy that didn't match what the site actually does.
 
 ## Before you do anything else
 

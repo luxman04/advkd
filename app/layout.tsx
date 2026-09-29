@@ -90,13 +90,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     address: [
       {
         '@type': 'PostalAddress',
-        streetAddress: 'Office-1023, Sector 21-B',
-        addressLocality: 'Chandigarh',
-        postalCode: '160022',
-        addressCountry: 'IN',
-      },
-      {
-        '@type': 'PostalAddress',
         streetAddress: '352, Munirka Village, South Extension',
         addressLocality: 'New Delhi',
         addressRegion: 'Delhi',

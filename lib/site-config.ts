@@ -11,9 +11,9 @@ export const siteConfig = {
   email: 'advocatekd24@gmail.com',
   whatsapp: 'https://wa.me/916239482847',
   address: {
-    office: 'Office-1023, Sector 21-B, Chandigarh – 160022',
+    office: 'Bar room no. 19, P&H high court, chandigarh 160001',
     court: 'Bar room no. 19, Punjab & Haryana High Court, Chandigarh – 160001',
-    chandigarh: 'Office-1023, Sector 21-B, Chandigarh – 160022',
+    chandigarh: 'Bar room no. 19, P&H high court, chandigarh 160001',
     delhi: '352, Munirka Village, South Extension, New Delhi',
     tohana: 'Opposite Government Boys High School, Tohana, Fatehabad – 120120',
   },
