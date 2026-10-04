@@ -29,7 +29,7 @@ export function verifyAdminToken(token?: string | null): boolean {
     const expectedBuffer = Buffer.from(expectedSignature);
 
     if (sigBuffer.length !== expectedBuffer.length) return false;
-    return crypto.timingSafeEqual(sigBuffer, expectedBuffer);
+    return crypto.timingSafeEqual(new Uint8Array(sigBuffer), new Uint8Array(expectedBuffer));
   } catch {
     return false;
   }

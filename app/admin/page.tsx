@@ -23,6 +23,7 @@ const CATEGORIES = [
   'Consumer Law',
   'Constitutional Law',
   'Environmental Law',
+  'General',
 ];
 
 export default function AdminPage() {

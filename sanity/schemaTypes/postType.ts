@@ -33,6 +33,7 @@ export const postType = defineType({
           'Consumer Law',
           'Constitutional Law',
           'Environmental Law',
+          'General',
         ].map((c) => ({ title: c, value: c })),
       },
       validation: (Rule) => Rule.required(),
