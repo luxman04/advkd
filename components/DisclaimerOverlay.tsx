@@ -29,23 +29,23 @@ export default function DisclaimerOverlay() {
         </div>
         <div className="text-[#8A9AAA] text-[0.84rem] leading-relaxed border-t border-gold/20 pt-6 max-h-[260px] overflow-y-auto space-y-3">
           <p>
-            This website is intended solely for informational purposes and does not constitute legal advice. The
-            information provided on this website should not be construed as legal counsel or a substitute for
-            professional legal advice from a qualified advocate.
+            The Advocates Act, 1961, and the rules and regulations framed by the Bar Council of India and the Bar Council of Punjab & Haryana do not permit advertisement or solicitation by advocates in any form or manner.
           </p>
           <p>
-            The Bar Council of India prohibits advocates from advertising or soliciting work through communication
-            in the public domain. This website is not intended to solicit clients and is provided purely as a means
-            of information.
+            This website, www.advkd.com, and the information and content contained herein are provided solely for informational purposes and should not be construed as an advertisement, solicitation, invitation, inducement or legal advice.
+            The information presented on this website is intended to provide general information about Adv. KD & Associates and its areas of legal practice. Any information, material or content available on this website shall not be treated as a substitute for professional legal advice from a qualified legal practitioner.
           </p>
           <p>
-            By accessing this website, you acknowledge that you are seeking information of your own accord and free
-            will, and that no form of solicitation has taken place on the part of Adv. KaranDeep or this firm.
+            Adv. KD & Associates does not assume any responsibility or liability for any loss, consequence or action taken by any person relying upon the information or content available on this website. The information provided may not necessarily be complete, exhaustive or applicable to every individual matter or circumstance.
           </p>
           <p>
-            Any reliance you place on information provided on this site is strictly at your own risk. Transmission
-            of this information is not intended to create, and receipt does not constitute, an advocate-client
-            relationship.
+            By entering and accessing this website, you acknowledge and confirm that you have voluntarily sought access to the information relating to Adv. KD & Associates, and that such access has not been made pursuant to any advertisement, solicitation, inducement or invitation by the Advocate, the firm, its associates, partners, members or representatives.
+          </p>
+          <p>
+            No information contained on this website shall be construed as creating an advocate-client relationship. Any professional engagement or legal representation shall arise only upon formal consultation and acceptance of the matter in accordance with applicable law and professional rules.
+          </p>
+          <p>
+            By clicking “I Agree / Enter Website”, you confirm that you have read and understood the above disclaimer and voluntarily wish to access this website.
           </p>
         </div>
         <div className="flex gap-4 mt-6 justify-center flex-wrap">
